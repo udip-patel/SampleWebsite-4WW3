@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <link rel="stylesheet" type="text/css" href="design.css" />
+    <title>Restaurant Review - Search Results</title>
+  </head>
+  <body>
+    <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
+    <div class="rr-container">
+      <!--navbar and header -->
+      <nav class="white rr-box shadow-1">
+        <ul class='rr-navbar'>
+          <!-- logo link that leads to search page -->
+          <li>
+            <a href='search.html' class="no-padding-or-margins">
+              <picture>
+                <source srcset='media/logo-2x.png 2x, media/logo.png 1x' />
+                <img src='media/logo.png' alt='logo' class='logo cursor-pointer' />
+              </picture>
+            </a>
+          </li>
+          <!-- header -->
+          <li>
+            <a href="search.html" class='no-padding-or-margins'>
+              <header class="grey-text">
+                <h1 class="text-center nav-header">Restaurant Review</h1>
+              </header>
+            </a>
+          </li>
+          <li>
+            <a href="#about.html">About</a>
+          </li>
+          <!-- these links will appear in the reverse order on larger screens, but in the written order on mobile devices -->
+          <li class="right">
+            <a class="white-text rr-btn rr-blue shadow-1" href="#login.html">Log In</a>
+          </li>
+          <li class="right">
+            <a href="registration.html" class="white-text rr-btn rr-yellow grey-text shadow-1">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+      <!--end of navbar -->
+      <br /><br />
+      <!--page content -->
+      <div class="page-content">
+        <div class='col-80 offset-10'>
+          <div class='col-70 left'>
+            <div class='padded-from-lr'>
+              <div class='rr-box white shadow-1'>
+                <h2 class='grey-text text-center'>Search Results For: "McDonalds"</h2>
+                <table>
+                  <tr class='lite-grey'>
+                    <th>Location and Webpage</th>
+                    <th>Average Rating</th>
+                  </tr>
+                  <tr>
+                   <td>
+                     McDonalds,<br />123 Road st, Hamilton, ON <br />(43.231283, -79.829957)
+                     <br /><br />
+                     <a href='individual_sample.html' class='rr-red rr-btn cursor-pointer white-text shadow-1'><b>Go To Page</b></a>
+                   </td>
+                   <!-- using unicode symbols to render stars -->
+                   <td>&#x2605;&#x2605;&#x2605;</td>
+                 </tr>
+                 <tr>
+                   <td>
+                     McDonalds, <br /> 456 Road Ave, Hamilton, ON<br />(43.221290, -79.884888)
+                     <br /><br />
+                     <a href='individual_sample.html' class='rr-red rr-btn cursor-pointer white-text shadow-1'><b>Go To Page</b></a>
+                   </td>
+                   <td>&#x2605;&#x2605;&#x2605;&#x2605;</td>
+                 </tr>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+          <div class='col-30 right'>
+            <div class='rr-box white shadow-1'>
+              <h2 class='grey-text text-center'>Map of Results</h2>
+              <img src='media/map_of_results.png' class='full-width' alt="map_of_results" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--page footer -->
+      <br /><br /><br /> <!-- to ensure space between footer and last item -->
+      <div class='gradient-to-footer footer-grey'></div>
+      <div class="footer grey">
+        <br />
+        <!-- simple sitemap, For now, just a reiteration of the navbar, but different links can be added here in the future -->
+        <div class='text-center padded-from-lr'>
+          <b class='white-text padded-from-lr'><u>Sitemap</u></b>
+          <a href="search.html" class='white-text padded-from-lr'>Home</a>
+          <a href='#about.html' class='white-text padded-from-lr'>About</a>
+          <a href='registration.html' class='white-text padded-from-lr'>Register</a>
+          <a href='#login.html' class='white-text padded-from-lr'>Login</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

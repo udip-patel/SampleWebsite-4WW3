@@ -1,0 +1,277 @@
+/*basic styled elements */
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body{
+  background-color: #F9F9F9;
+}
+table{ width: 100%; }
+th{ padding:10px; }
+td{
+  padding: 8px;
+  padding-bottom: 20px;
+}
+th, td{
+  text-align: center;
+  border-bottom: 1.5px solid #d4d4d4;
+}
+a{
+  text-decoration: none;
+}
+
+/*navbar and logo*/
+.rr-navbar{
+  list-style-type: none;
+  margin:0;
+  padding: 0px;
+  overflow: hidden;
+}
+.rr-navbar li{
+  float: left;
+}
+.rr-navbar li.right{
+  float: right;
+  margin-left:1% !important;
+}
+
+/*these values were chosen for the navbar afer testing */
+.rr-navbar li a{
+  display: block;
+  color:#7c7072 ;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 30px;
+  margin-top:13px;
+}
+.logo{
+  width: 60px !important;
+  margin-top:5px !important;
+}
+.nav-header{
+  font-size:1.5em !important;
+  margin-bottom: 0 !important;
+}
+
+/*footer-related structures */
+.rr-container{
+  min-height: 100%;
+  position: relative;
+}
+.page-content{
+  padding-bottom:70px;
+}
+.gradient-to-footer{
+  position:absolute;
+  bottom:60px;
+  width:100%;
+  height:10px;
+}
+.footer{
+  position:absolute;
+  bottom:0;
+  width: 100% !important;
+  height: 60px;
+}
+/*a fixed footer is used when there is a lot of content on the page, it is the alternative to the sticky footer */
+.fixed{
+  position: fixed !important;
+}
+
+/*structural classes, used to imitiate frameworks' column and panel/dialog box system*/
+.col-90{
+  width: 90% !important;
+}
+.col-80{
+  width: 80% !important;
+}
+/*anything below col-70 is meant to be responsive and increases in size for tablet/mobile devices */
+.col-70{
+  width: 70% !important;
+}
+.col-60{
+  width: 60% !important;
+}
+.col-50{
+  width:50% !important;
+}
+.col-45{
+  width: 45% !important;
+}
+.col-30{
+  width: 30% !important;
+}
+.col-20{
+  width: 20% !important;
+}
+.col-10{
+  width: 10% !important;
+}
+.offset-10{
+  padding-left: 10% !important;
+}
+/*this offset-15 is paired with col-70 and is meant to be responsive */
+.offset-15{
+  padding-left: 15% !important;
+}
+/*this offset is paired with col-60 and is meant to be responsive as well */
+.offset-20{
+  padding-left: 20% !important;
+}
+.offset-3{
+  padding-left: 3% !important;
+}
+.offset-40{
+  padding-left: 40% !important;
+}
+
+.rr-box{
+  padding: 0.3em 0.8em;
+}
+.rr-btn{
+  padding: 0.25em 0.5em;
+  border-radius:5px;
+}
+.rr-vid{
+  height:200px !important;
+  max-width: 100%;
+}
+
+/*colors*/
+.rr-red{
+  background-color: #de6570;
+}
+.rr-blue{
+  background-color: #90CCF4;
+}
+.rr-yellow{
+  background-color: #ffbd32;
+}
+.white{
+  background-color: white !important;
+}
+.grey{
+  background-color: #303030;
+}
+.footer-grey{
+  background-color: #565656;
+}
+.lite-grey{
+  background-color: #f6f6f6;
+}
+.white-text{
+  color: white !important;
+}
+.grey-text{
+  color: #7c7072 !important;
+}
+.lite-grey-text{
+  color: #565656 !important;
+}
+
+/*shadows - using box-shadow to give 3d-effect, similar to z-depth classes in materializecss*/
+.shadow-1{
+  box-shadow: 0 5px 10px rgba(1,1,1,0.19), 0 2px 2px rgba(1,1,1,0.23);
+}
+.shadow-3{
+  box-shadow: 0 7.5px 15px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+}
+.shadow-5{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+/*custom classes*/
+.right{
+  float: right !important;
+}
+.left{
+  float: left !important;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.no-padding-or-margins{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.cursor-pointer{
+  cursor:pointer;
+}
+.full-width{
+  width: 100% !important;
+}
+.spaced-inputs label{
+  width: 100%;
+  padding-bottom:5px;
+}
+.spaced-inputs input, .spaced-inputs select, .spaced-inputs textarea{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+/*because radio buttons are different from text, they don't need to extend to full width */
+.spaced-inputs input[type='radio'], .spaced-inputs input[type='file']{
+  width:auto !important;
+}
+.inline{
+  display: inline-block !important;
+}
+/*padded-from-left-to-right, in mobile screens, this class also adds vertical padding */
+.padded-from-lr{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.padded-at-bottom{
+  padding-bottom:15px;
+}
+.padded-at-top{
+  padding-top: 15px;
+}
+.scroll-box-sm{
+  height: 240px;
+  overflow-y:scroll;
+}
+
+
+/*responsive measures for Tablets and small laptops */
+@media screen and (max-width: 1200px ){
+  .col-md-30{
+    width:30% !important;
+  }
+  .col-md-70{
+    width: 70% !important;
+  }
+}
+/*responsive measures for mobile devices*/
+@media screen and (max-width: 768px){
+    table{ width:100%; }
+
+    .rr-navbar li{float: none;}
+    .rr-navbar li.right{
+      float:none!important;
+    }
+    .rr-navbar li a{
+      padding: 5px 5px;
+      margin-top: 6px;
+    }
+    .logo{ margin-top: 0px; }
+
+    .col-50, .col-45{ width: 100% !important; }
+    .col-80, .col-70, .col-60, .col-30, .col-20, .col-10{ width:95% !important; }
+    .offset-15, .offset-20, .offset-40{ padding-left: 2.5% !important;}
+    .offset-10{ padding-left: 5% !important; }
+    /*custom classes for arranging do not apply in mobile, best to just center everything for small screens */
+    .right, .left { float: none !important; }
+    .padded-from-lr{
+      margin-top:5px;
+      margin-bottom:5px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+}

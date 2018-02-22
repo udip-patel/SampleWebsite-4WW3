@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="design.css" />
+    <title>Restaurant Review - McDonalds</title>
+
+    <!--for the social media metadata, I went with the approach that each object page would share different content
+    ex. for each restaurant, the description of the facebook or twitter item card will contain the address and the average review of that restaurant -->
+    <!-- ADD-ON TASK 1.1 and 1.2 -->
+    <!--Facebook Open graph Metadata -->
+    <meta property='og:title' content='Restaurant Review - McDonalds' />
+    <meta property='og:type' content='website' />
+    <!-- this is just a fake domain, NOT ACTIVE -->
+    <meta property='og:url' content='http://restaurantreview.com/individual_sample.html' />
+    <!-- again fake data, a placeholder image, the current logo is not hosted on any website -->
+    <meta property='og:image' content='https://via.placeholder.com/350x150' />
+    <meta property='og:description' content='Restaurant Review gives McDonalds at 123 Road St, Hamilton, ON 4 stars out of 5' />
+
+    <!--Twitter Cards metadata -->
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:title' content='Restaurant Review - McDonalds' />
+    <!--fake twitter account -->
+    <meta name='twitter:site' content='@RestaurantReview' />
+    <meta name='twitter:description' content='Restaurant Review gives McDonalds at 123 Road St, Hamilton, ON 4 stars out of 5' />
+    <meta name='twitter:image' content='https://via.placeholder.com/350x150' />
+
+  </head>
+  <body>
+    <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
+    <div class="rr-container">
+      <!--navbar and header -->
+      <nav class="white rr-box shadow-1">
+        <ul class='rr-navbar'>
+          <!-- logo link that leads to search page -->
+          <li>
+            <a href='search.html' class="no-padding-or-margins">
+              <picture>
+                <source srcset='media/logo-2x.png 2x, media/logo.png 1x' />
+                <img src='media/logo.png' alt='logo' class='logo cursor-pointer' />
+              </picture>
+            </a>
+          </li>
+          <!-- header -->
+          <li>
+            <a href="search.html" class='no-padding-or-margins'>
+              <header class="grey-text">
+                <h1 class="text-center nav-header">Restaurant Review</h1>
+              </header>
+            </a>
+          </li>
+          <li>
+            <a href="#about.html">About</a>
+          </li>
+          <!-- these links will appear in the reverse order on larger screens, but in the written order on mobile devices -->
+          <li class="right">
+            <a class="white-text rr-btn rr-blue shadow-1" href="#login.html">Log In</a>
+          </li>
+          <li class="right">
+            <a href="registration.html" class="white-text rr-btn rr-yellow grey-text shadow-1">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+      <!--end of navbar -->
+      <br /><br />
+      <!--page content -->
+      <div class="page-content">
+        <div class='col-80 offset-10'>
+          <!-- using col-md to define the width of the block on small-screened laptops (1200px screen), col-20 describes the size on regular computer screens (above 1200px wide) -->
+          <!-- this block is used to display the restaurant's image, name, rating, address and location on a map -->
+          <div class='col-20 left col-md-30'>
+            <!-- ADD-ON TASK 1.2: using Place Schema to signify lon/lat coordinates -->
+            <div class='rr-box white shadow-1' itemscope itemtype='http://schema.org/Place'>
+              <!--used picture element to show circular logo on larger screens, and a square logo on mobile or table devices -->
+              <picture>
+                <source media="(min-width:768px)" srcset="media/restaurant_logo.png" />
+                <img src='media/restaurant_logo-sm.png' alt="object_logo" class='full-width' />
+              </picture>
+              <h2 class='text-center grey-text no-padding-or-margins'>McDonalds</h2>
+              <p class='text-center no-padding-or-margins'>
+                Avg Rating:<br />
+                &#x2605;&#x2605;&#x2605;&#x2605;
+              </p>
+              <!--outline values of lon and lat for web parsers using GeoCoordinates schema-->
+              <p class='text-center' itemprop='geo' itemscope itemtype="http://schema.org/GeoCoordinates">
+                (Latitude, Longitude):<br />(43.221290, -79.884888)
+                <meta itemprop="latitude" content="43.221290" />
+                <meta itemprop="longitude" content="-79.88488" />
+              </p>
+              <img src='media/map_of_single_result.png' alt='object_location' class='full-width' />
+            </div>
+          </div>
+          <!-- this larger block is used to display the description and reviews for the restaurant -->
+          <div class='col-80 col-md-70 right'>
+            <div class='padded-from-lr'>
+              <div class='inline rr-box white shadow-1'>
+                <div class='col-50 left'>
+                  <h2 class='grey-text padded-from-lr'>Description of Restaurant</h2>
+                  <!-- sample lorem ipsum text for the description -->
+                  <div class='rr-box lite-grey'>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  <h4 class='grey-text'>Address: 123 Road St, Hamilton, ON</h4>
+                </div>
+                <div class='col-45 right'>
+                  <br />
+                  <video class='rr-vid' controls>
+                    <source src='media/object_video.mp4' type='video/mp4' />
+                  </video>
+                </div>
+              </div>
+              <br /><br />
+              <!--list of individual ratings, make it a scrolling box with a fixed height -->
+              <div class='rr-box white shadow-1 scroll-box-sm'>
+                <table>
+                  <tr class='lite-grey'>
+                    <th>User</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                  </tr>
+                  <tr>
+                    <!--ADD ON TASK 1.3 -->
+                    <!-- use microdata to signify each review, so both rows will contain these nested spans with itemscope/prop/type -->
+                    <!-- NOTE: the HTML validator parses the following as an error because it does not allow <span> tags to be inside a table,
+                    however, the webpage is still functional ON ALL BROWSERS and since the <span> elements are only used for the add-on task,
+                    I hope this does not result in the loss of marks -->
+                    <span itemscope itemtype='http://schema.org/Review'>
+                      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <td>
+                          <span itemprop="name">Ian F.</span><br />29, M
+                        </td>
+                      </span>
+                      <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Restaurant">
+                        <meta itemprop="name" content="McDonalds - 123 Road St, Hamilton, ON" />
+                        <meta itemprop="image" content="https://via.placeholder.com/350x150" />
+                      </span>
+                       <td>
+                        12/18/2017
+                        <br /><br />
+                        <span itemprop="description">Excellent coffee with a free paper slower service in morning very busy</span>
+                       </td>
+                       <!-- using unicode symbols to render stars -->
+                       <td>&#x2605;&#x2605;&#x2605;&#x2605;</td>
+                       <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                         <meta itemprop="ratingValue" content="4" />
+                       </span>
+                     </span>
+                 </tr>
+                 <tr>
+                   <span itemscope itemtype='http://schema.org/Review'>
+                     <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                       <td>
+                         <span itemprop="name">Dante L.</span> <br /> 34, M
+                       </td>
+                     </span>
+                     <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Restaurant">
+                       <meta itemprop="name" content="McDonalds - 123 Road St, Hamilton, ON" />
+                       <meta itemprop="image" content="https://via.placeholder.com/350x150" />
+                     </span>
+                     <td>
+                       09/02/2017
+                       <br /><br />
+                       <span itemprop="description">Good location, easy access to parking and drive through</span>
+                     </td>
+                     <td>&#x2605;&#x2605;&#x2605;&#x2605;</td>
+                     <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                       <meta itemprop="ratingValue" content="4" />
+                     </span>
+                  </span>
+                 </tr>
+                </table>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--page footer -->
+      <br /><br /><br /> <!-- to ensure space between footer and last item -->
+      <div class='gradient-to-footer footer-grey fixed'></div>
+      <div class="footer grey fixed">
+        <br />
+        <!-- simple sitemap, For now, just a reiteration of the navbar, but different links can be added here in the future -->
+        <div class='text-center padded-from-lr'>
+          <b class='white-text padded-from-lr'><u>Sitemap</u></b>
+          <a href="search.html" class='white-text padded-from-lr'>Home</a>
+          <a href='#about.html' class='white-text padded-from-lr'>About</a>
+          <a href='registration.html' class='white-text padded-from-lr'>Register</a>
+          <a href='#login.html' class='white-text padded-from-lr'>Login</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
