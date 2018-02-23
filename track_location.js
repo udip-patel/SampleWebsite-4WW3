@@ -23,8 +23,8 @@ function getLocation(){
 function showLocation(position){
   document.getElementById('current-lat').innerHTML = position.coords.latitude;
   document.getElementById('current-lon').innerHTML = position.coords.longitude;
-  document.getElementById('search-lat').value = position.coords.latitude;
-  document.getElementById('search-lon').value = position.coords.longitude;
+  document.getElementById('form-lat').value = position.coords.latitude;
+  document.getElementById('form-lon').value = position.coords.longitude;
   //hide any errors if there were any being shown
   if(!document.getElementById('error-response-box').classList.contains('hidden')){
     document.getElementById('error-response-box').classList.add('hidden');
@@ -39,8 +39,8 @@ function showError(error){
 
 function showErrorResponse(message){
   //reset hidden input values to default -
-  document.getElementById('search-lat').value = '-'
-  document.getElementById('search-lon').value = '-';
+  document.getElementById('form-lat').value = '-'
+  document.getElementById('form-lon').value = '-';
   //load error text and show the error message
   document.getElementById('error-message').innerHTML = message;
   if(document.getElementById('error-response-box').classList.contains('hidden')){
@@ -51,8 +51,8 @@ function showErrorResponse(message){
 //for when the user de-selects the "track location" checkbox
 function resetLocationTracking(){
   //RESET the values of hidden input values that will pass the user's lon and lat value to the server
-  document.getElementById('search-lat').value = '-'
-  document.getElementById('search-lon').value = '-';
+  document.getElementById('form-lat').value = '-'
+  document.getElementById('form-lon').value = '-';
 
   //hide any response dialogs that are currently BEING SHOWN
   if(!document.getElementById('success-response-box').classList.contains('hidden')){

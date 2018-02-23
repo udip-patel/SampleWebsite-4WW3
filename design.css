@@ -20,6 +20,12 @@ th, td{
 a{
   text-decoration: none;
 }
+input:valid:focus{
+  border-color: green;
+}
+input:invalid:focus{
+  border-color: red;
+}
 
 /*navbar and logo*/
 .rr-navbar{

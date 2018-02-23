@@ -83,27 +83,29 @@
                     <!-- 5 different types of inputs used: text, date, radio, email, password -->
                     <div class='col-70 offset-15 text-center spaced-inputs'>
                       <label><b>Name of Restaurant*</b></label>
-                      <input type='text' name='name' class='rr-input' />
+                      <input type='text' name='name' class='rr-input' required/>
                       <br />
                       <label><b>Description*</b></label>
-                      <textarea name='description' class='rr-input'></textarea>
+                      <textarea name='description' class='rr-input' required></textarea>
                       <br />
                       <div class='full-width'>
                         <div class='col-50 left padded-at-bottom'>
                           <div class='padded-from-lr'>
                             <label><b>Longitude*</b></label>
-                            <input type='text' name='lon' class='rr-input' />
+                            <input type='text' name='lon' class='rr-input' required/>
                           </div>
                         </div>
                         <div class='col-50 right padded-at-bottom'>
                           <div class='padded-from-lr'>
                             <label><b>Latitude*</b></label>
-                            <input type='text' name='lat' class='rr-input'/>
+                            <input type='text' name='lat' class='rr-input' required/>
                           </div>
                         </div>
                       </div>
+                      <label><b>Contact Email:</b></label>
+                      <input type='email' name='contact_email' class='rr-input'/>
                       <label><b>Upload Image*: </b></label>
-                      <input type='file' name='image' accept="image/*"/>
+                      <input type='file' name='image' accept="image/*" required/>
                       <br />
                       <label><b>Upload Video:&nbsp;&nbsp;</b></label>
                       <input type='file' name='vid' accept="video/*" />
