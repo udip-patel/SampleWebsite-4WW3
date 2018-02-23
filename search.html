@@ -28,6 +28,8 @@
 
     <link rel="stylesheet" type="text/css" href="design.css" />
     <title>Restaurant Review - Search</title>
+    <!-- script that provides geolocation functionality -->
+    <script type='text/javascript' src='search_location.js'></script>
   </head>
   <body>
     <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
@@ -73,8 +75,8 @@
             <h2 class='text-center grey-text'>Search For Restaurants</h2>
             <div class='full-width'>
               <div class='col-70 offset-15'>
-                <div class='rr-box lite-grey'>
-                  <form>
+                <form>
+                  <div class='rr-box lite-grey shadow-1'>
                     <!-- search form, with input elements separated vertically -->
                     <div class='col-70 offset-15 text-center spaced-inputs'>
                       <label><b>Search By Name of Restaurant</b></label>
@@ -90,18 +92,36 @@
                        <option value='4'>4 stars</option>
                        <option value='5'>5 stars</option>
                      </select>
-                    </div>
-                    <br /><hr class='col-80 offset-10'/>
-                    <div class='col-60 offset-20'>
-                      <button type='submit' class='cursor-pointer full-width rr-red white-text padded-at-top padded-at-bottom'>
-                          <b class='text-center'>Search</b>
-                      </button>
-                    </div>
-                    <br />
-                  </form>
+                   </div>
+                   <!-- hidden inputs that will be passed into the server in part 3, values loaded using geolocation -->
+                   <input id='search-lat' type='hidden' name='search_lat' value='-' />
+                   <input id='search-lon' type='hidden' name='search_lon' value='-' />
+                   <br />
+                </div>
+                <!-- newly added for PART 2 - a checkbox that toggles geolocation tracking with an onclick attribute linking to a JS function -->
+                <div class='rr-box white shadow-1'>
+                  <input id='track-location' type='checkbox' name='track_location' onclick='toggleTrackingLocation()' class='cursor-pointer rr-input'/>
+                  <label for='track-location' class='cursor-pointer'>Use My Location to Narrow Search Results</label>
+                </div>
+                <!-- response boxes for geolocation process, hidden by default. shown/hidden by JS functions -->
+                <div id='success-response-box' class='rr-box rr-dark-blue white-text hidden'>
+                  <p class='text-center'>
+                    <b>Location Known (lat, lon): </b>(<span id='current-lat'></span>, <span id='current-lon'></span>)
+                  </p>
+                </div>
+                <div id='error-response-box' class='rr-box rr-dark-red white-text hidden'>
+                  <p class='text-center'>
+                    <b>Error: </b> <span id='error-message'></span>
+                  </p>
                 </div>
                 <br />
-              </div>
+                <div class='col-60 offset-20'>
+                  <button type='submit' class='cursor-pointer full-width rr-red white-text padded-at-top padded-at-bottom'>
+                      <b class='text-center'>Search</b>
+                  </button>
+                </div>
+                <br />
+              </form>
             </div>
           </div>
         </div>

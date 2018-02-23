@@ -157,8 +157,14 @@ a{
 .rr-red{
   background-color: #de6570;
 }
+.rr-dark-red{
+  background-color:  #b2515a;
+}
 .rr-blue{
   background-color: #90CCF4;
+}
+.rr-dark-blue{
+  background-color: #869eae;
 }
 .rr-yellow{
   background-color: #ffbd32;
@@ -174,6 +180,9 @@ a{
 }
 .lite-grey{
   background-color: #f6f6f6;
+}
+.rr-grey{
+  background-color: #dddddd;
 }
 .body-grey{
   background-color: #f9f9f9;
@@ -204,6 +213,9 @@ a{
 .circle{
   border-radius: 50%;
   padding: 10px;
+}
+.hidden{
+  display: none;
 }
 .right{
   float: right !important;
