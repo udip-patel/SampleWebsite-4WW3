@@ -249,13 +249,14 @@ input:invalid:focus{
   width: 100%;
   padding-bottom:5px;
 }
-.spaced-inputs input, .spaced-inputs select, .spaced-inputs textarea{
+.spaced-inputs input,
+.spaced-inputs select, .spaced-inputs textarea{
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
 }
-/*because radio buttons are different from text, they don't need to extend to full width */
-.spaced-inputs input[type='radio'], .spaced-inputs input[type='file']{
+/*because radio/checkbox buttons are different from text, they don't need to extend to full width */
+.spaced-inputs input[type='radio'], .spaced-inputs input[type='file'], .spaced-inputs input[type='checkbox']{
   width:auto !important;
 }
 .inline{

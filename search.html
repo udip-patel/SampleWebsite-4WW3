@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="design.css" />
     <title>Restaurant Review - Search</title>
     <!-- script that provides geolocation functionality -->
-    <script type='text/javascript' src='track_location.js'></script>
+    <script type='text/javascript' src='js/track_location.js'></script>
   </head>
   <body>
     <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
@@ -94,8 +94,8 @@
                      </select>
                    </div>
                    <!-- hidden inputs that will be passed into the server in part 3, values loaded using geolocation -->
-                   <input id='form-lat' type='hidden' name='search_lat' value='-' />
-                   <input id='form-lon' type='hidden' name='search_lon' value='-' />
+                   <input id='form-lat' type='hidden' name='search_lat' value='' />
+                   <input id='form-lon' type='hidden' name='search_lon' value='' />
                    <br />
                 </div>
                 <!-- newly added for PART 2 - a checkbox that toggles geolocation tracking with an onclick attribute linking to a JS function -->

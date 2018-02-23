@@ -29,6 +29,8 @@
 
     <link rel="stylesheet" type="text/css" href="design.css" />
     <title>Restaurant Review - Submit Restaurant</title>
+    <script type='text/javascript' src='js/track_location.js'></script>
+
   </head>
   <body>
     <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
@@ -81,6 +83,7 @@
                   <form>
                     <!--this will hold the set of inputs and separate them vertically -->
                     <!-- 5 different types of inputs used: text, date, radio, email, password -->
+                    <!-- added HTML required validators and extra css for part 2 -->
                     <div class='col-70 offset-15 text-center spaced-inputs'>
                       <label><b>Name of Restaurant*</b></label>
                       <input type='text' name='name' class='rr-input' required/>
@@ -88,22 +91,37 @@
                       <label><b>Description*</b></label>
                       <textarea name='description' class='rr-input' required></textarea>
                       <br />
-                      <div class='full-width'>
-                        <div class='col-50 left padded-at-bottom'>
-                          <div class='padded-from-lr'>
-                            <label><b>Longitude*</b></label>
-                            <input type='text' name='lon' class='rr-input' required/>
-                          </div>
-                        </div>
-                        <div class='col-50 right padded-at-bottom'>
+                      <label><b>Contact Email:</b></label>
+                      <input type='email' name='contact_email' class='rr-input'/>
+                      <div>
+                        <div class='col-50 left'>
                           <div class='padded-from-lr'>
                             <label><b>Latitude*</b></label>
-                            <input type='text' name='lat' class='rr-input' required/>
+                            <input id='form-lat' type='text' name='lat' class='rr-input' required/>
+                          </div>
+                        </div>
+                        <div class='col-50 right'>
+                          <div class='padded-from-lr'>
+                            <label><b>Longitude*</b></label>
+                            <input id='form-lon' type='text' name='lon' class='rr-input' required/>
                           </div>
                         </div>
                       </div>
-                      <label><b>Contact Email:</b></label>
-                      <input type='email' name='contact_email' class='rr-input'/>
+                      <div>
+                        <input id='track-location' type='checkbox' name='track_location' onclick='toggleTrackingLocation()' class='cursor-pointer rr-input'/>
+                        <label for='track-location' class='cursor-pointer'>Use My current Location to set Latitude and Longitude</label>
+                      </div>
+                      <div id='success-response-box' class='rr-box rr-dark-blue hidden'>
+                        <p class='text-center white-text no-padding-or-margins'>
+                          Location Found <span class='hidden'>(<span id='current-lat'></span>, <span id='current-lon'></span>)</span>
+                        </p>
+                      </div>
+                      <div id='error-response-box' class='rr-box rr-dark-red white-text hidden'>
+                        <p class='text-center'>
+                          <b>Error: </b> <span id='error-message'></span>
+                        </p>
+                      </div>
+                      <br /><br />
                       <label><b>Upload Image*: </b></label>
                       <input type='file' name='image' accept="image/*" required/>
                       <br />
