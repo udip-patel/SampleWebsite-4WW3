@@ -155,6 +155,9 @@ input:invalid:focus{
   padding: 0.25em 0.5em;
   border-radius:5px;
 }
+button:hover{
+  box-shadow: 0 3px 3px rgba(1,1,1,0.19), 0 1.5px 1.5px rgba(1,1,1,0.23);
+}
 .rr-vid{
   height:200px !important;
   max-width: 100%;
@@ -162,19 +165,19 @@ input:invalid:focus{
 
 /*colors*/
 .rr-red{
-  background-color: #de6570;
+  background-color: #d53b49;
 }
 .rr-dark-red{
   background-color:  #b2515a;
 }
 .rr-blue{
-  background-color: #90CCF4;
+  background-color: #32dbff;
 }
 .rr-dark-blue{
-  background-color: #869eae;
+  background-color: #1782e4;
 }
 .rr-yellow{
-  background-color: #ffbd32;
+  background-color: #feac00;
 }
 .white{
   background-color: white !important;

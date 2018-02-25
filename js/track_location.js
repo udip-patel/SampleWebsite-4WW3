@@ -21,8 +21,8 @@ function getLocation(){
 //success function, called when poistion is found. sets the values of lat and lon to be displayed
 //also saves the current location into hidden input values that can be used for part 3 of the project when actually submitting the search form
 function showLocation(position){
-  document.getElementById('current-lat').innerHTML = position.coords.latitude;
-  document.getElementById('current-lon').innerHTML = position.coords.longitude;
+  document.getElementById('current-lat').innerHTML = position.coords.latitude.toFixed(5);
+  document.getElementById('current-lon').innerHTML = position.coords.longitude.toFixed(5);
   document.getElementById('form-lat').value = position.coords.latitude;
   document.getElementById('form-lon').value = position.coords.longitude;
   //hide any errors if there were any being shown

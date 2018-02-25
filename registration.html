@@ -27,6 +27,7 @@
 
     <link rel="stylesheet" type="text/css" href="design.css" />
     <title>Restaurant Review - Register</title>
+    <script type='text/javascript' src='js/validate_registration.js'></script>
   </head>
   <body>
     <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
@@ -76,7 +77,8 @@
                   (* denotes a required field)
                 </p>
                 <div class='rr-box lite-grey'>
-                  <form>
+                  <!--call validation function when user clicks submit btn -->
+                  <form onsubmit='return validateRegistration(this);'>
                     <!--this will hold the set of inputs and separate them vertically -->
                     <!-- 5 different types of inputs used: text, date, radio, email, password -->
                     <div class='col-70 offset-15 text-center spaced-inputs'>
@@ -100,10 +102,17 @@
                       <input type='password' name='password_confirmation' class='rr-input' />
                     </div>
                     <!--end of inputs -->
-                    <br /><hr class='col-80 offset-10'/>
+                    <br />
+                    <!--form validation response box, to display errors -->
+                    <div id='response-container' class='col-80 offset-10 hidden'>
+                      <div id='response-box' class='rr-box rr-red white-text'>
+                        <p id='response-msg' class='text-center'></p>
+                      </div>
+                    </div>
+                    <hr class='col-80 offset-10'/>
                     <!-- submit btn -->
                     <div class='col-60 offset-20'>
-                      <button type='submit' class='cursor-pointer full-width rr-red white-text padded-at-top padded-at-bottom'>
+                      <button type='submit' class='cursor-pointer full-width rr-dark-blue white-text padded-at-top padded-at-bottom'>
                         <b class='text-center'>Sign Up</b>
                       </button>
                     </div>
