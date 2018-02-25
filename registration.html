@@ -105,8 +105,13 @@
                     <br />
                     <!--form validation response box, to display errors -->
                     <div id='response-container' class='col-80 offset-10 hidden'>
-                      <div id='response-box' class='rr-box rr-red white-text'>
-                        <p id='response-msg' class='text-center'></p>
+                      <div id='response-box' class='rr-box rr-red white-text text-center'>
+                        <!-- heading with 'x' button that can close the error box -->
+                        <p>
+                          <b>Error!</b><span class='right cursor-pointer' onclick='hideValidationErrors()'>&#10006;</span>
+                        </p>
+                        <!--dynamically added error message -->
+                        <p id='response-msg' class='no-margins'></p>
                       </div>
                     </div>
                     <hr class='col-80 offset-10'/>

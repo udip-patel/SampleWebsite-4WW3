@@ -27,6 +27,14 @@
 
     <link rel="stylesheet" type="text/css" href="design.css" />
     <title>Restaurant Review - Search Results</title>
+    <!-- leaflet maps and custom map-defining script -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+    crossorigin=""></script>
+    <script type='text/javascript' src='js/map_multiple_markers.js'></script>
   </head>
   <body>
     <!-- rr-container ensures that the page fits to the screen in terms of height, with the footer at the absolute bottom -->
@@ -69,9 +77,11 @@
       <div class="page-content">
         <div class='col-80 offset-10'>
           <div class='col-30 left'>
-            <div class='rr-box white shadow-1'>
+            <div class='rr-box white shadow-1 map-container'>
               <h2 class='grey-text text-center'>Map of Results</h2>
-              <img src='media/map_of_results.png' class='full-width' alt="map_of_results" />
+              <div id='map-with-multiple-markers' class='rr-side-map'>
+                <!-- map contents -->
+              </div>
             </div>
           </div>
           <div class='col-70 right'>
@@ -83,18 +93,18 @@
                     <th>Location and Webpage</th>
                     <th>Average Rating</th>
                   </tr>
-                  <tr>
+                  <tr id='first-row'>
                    <td>
-                     McDonalds,<br />123 Road st, Hamilton, ON <br />(43.231283, -79.829957)
+                     McDonalds,<br />50 Dundurn St S, Hamilton, ON L8P 4W3<br />(43.261243, -79.889325)
                      <br /><br />
                      <a href='individual_sample.html' class='rr-red rr-btn cursor-pointer white-text shadow-1'><b>Go To Page</b></a>
                    </td>
                    <!-- using unicode symbols to render stars -->
-                   <td>&#x2605;&#x2605;&#x2605;</td>
+                   <td>&#x2605;&#x2605;&#x2605;&#x2605;</td>
                  </tr>
-                 <tr>
+                 <tr id='second-row'>
                    <td>
-                     McDonalds, <br /> 456 Road Ave, Hamilton, ON<br />(43.221290, -79.884888)
+                     McDonalds, <br /> 10 Cootes Dr, Dundas, ON L9H 1A9<br />(43.265163, -79.949742)
                      <br /><br />
                      <a href='individual_sample.html' class='rr-red rr-btn cursor-pointer white-text shadow-1'><b>Go To Page</b></a>
                    </td>

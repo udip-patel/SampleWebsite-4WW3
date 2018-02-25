@@ -22,26 +22,26 @@ function hideValidationErrors(){
 }
 
 function validateRegistration(form){
-  errorMessage = "Error!<br>";//reset error message for the form submission
+  errorMessage = "";//reset error message for the form submission
   var isFormValid = true;
   //check for empty required inputs and store the specific error message in the global var
   if(form.name.value == '' || form.email.value == '' || form.password.value == '' || form.password_confirmation.value == ''){
     isFormValid = false;
-    errorMessage += "&#10006; One or More required fields have not been filled out.";
+    errorMessage += "One or More required fields have not been filled out.";
   }
   //check if the name contains anything except letters and spaces
   else if(!(/^[A-Za-z ]+$/).test(form.name.value)){
     isFormValid = false;
-    errorMessage += "&#10006; A Name can only contain letters";
+    errorMessage += "A Name can only contain letters";
   }
   //check if the email format is valid (format tested: words"@"words"."words)
   else if(!(/^[A-Za-z]+\@[A-Za-z]+\.[A-Za-z]+$/).test(form.email.value)){
     isFormValid = false;
-    errorMessage += "&#10006; An Email Address must be of the form 'address@example.ca'";
+    errorMessage += "An Email Address must be of the form 'address@example.ca'";
   }
   else if(form.password.value != form.password_confirmation.value){
     isFormValid = false;
-    errorMessage += "&#10006; Password confirmation does not match Password";
+    errorMessage += "Password confirmation does not match Password";
   }
   //depending on the value of isFormValid, show or hide the list of errors, and return the value back to the form
   if(!isFormValid) showValidationErrors();
