@@ -104,14 +104,15 @@
                   <label for='track-location' class='cursor-pointer'>Use My Location to Narrow Search Results</label>
                 </div>
                 <!-- response boxes for geolocation process, hidden by default. shown/hidden by JS functions -->
-                <div id='success-response-box' class='rr-box rr-dark-blue white-text hidden'>
+                <div id='success-response-box' class='hidden'>
+                  <!-- the success box shows a checkmark and the current location found -->
                   <p class='text-center'>
-                    <b>Location Known (lat, lon): </b>(<span id='current-lat'></span>, <span id='current-lon'></span>)
+                    <b><span class='green-text'>&#10004;</span> Location Known (lat, lon): </b>(<span id='current-lat'></span>, <span id='current-lon'></span>)
                   </p>
                 </div>
-                <div id='error-response-box' class='rr-box rr-dark-red white-text hidden'>
+                <div id='error-response-box' class='hidden'>
                   <p class='text-center'>
-                    <b>Error: </b> <span id='error-message'></span>
+                    <b><span class='red-text'>&#10006;</span> Error: </b> <span id='error-message'></span>
                   </p>
                 </div>
                 <br />

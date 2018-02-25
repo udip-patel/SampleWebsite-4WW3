@@ -111,14 +111,14 @@
                         <input id='track-location' type='checkbox' name='track_location' onclick='toggleTrackingLocation()' class='cursor-pointer rr-input'/>
                         <label for='track-location' class='cursor-pointer'>Use My current Location to set Latitude and Longitude</label>
                       </div>
-                      <div id='success-response-box' class='rr-box rr-dark-blue hidden'>
-                        <p class='text-center white-text no-padding-or-margins'>
-                          Location Found <span class='hidden'>(<span id='current-lat'></span>, <span id='current-lon'></span>)</span>
+                      <div id='success-response-box' class='hidden'>
+                        <p class='text-center'>
+                          <b><span class='green-text'>&#10004;</span> Location Found <span class='hidden'>(<span id='current-lat'></span>, <span id='current-lon'></span>)</span>
                         </p>
                       </div>
-                      <div id='error-response-box' class='rr-box rr-dark-red white-text hidden'>
+                      <div id='error-response-box' class='hidden'>
                         <p class='text-center'>
-                          <b>Error: </b> <span id='error-message'></span>
+                          <b><span class='red-text'>&#10006;</span> <b>Error: </b> <span id='error-message'></span>
                         </p>
                       </div>
                       <br /><br />

@@ -20,6 +20,7 @@ th, td{
 a{
   text-decoration: none;
 }
+/*add green/red highlight around valid/invalid inputs when they are focused on*/
 input:valid:focus{
   border-color: green;
 }
@@ -201,6 +202,13 @@ input:invalid:focus{
 }
 .lite-grey-text{
   color: #565656 !important;
+}
+/*used for success/error responses */
+.green-text{
+  color: green;
+}
+.red-text{
+  color: red;
 }
 
 /*shadows - using box-shadow to give 3d-effect, similar to z-depth classes in materializecss*/
